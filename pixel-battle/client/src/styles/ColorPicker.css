@@ -1,0 +1,124 @@
+.color-picker {
+  background: var(--background-card);
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 320px;
+}
+
+.color-picker-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-primary);
+}
+
+.preset-colors {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.color-swatch {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.color-swatch:hover {
+  transform: scale(1.1);
+  border-color: var(--text-primary);
+}
+
+.color-swatch.active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 12px rgba(99, 102, 241, 0.6);
+  transform: scale(1.15);
+}
+
+.custom-color {
+  margin-bottom: 20px;
+}
+
+.custom-color label {
+  display: block;
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+
+.custom-color-input {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.custom-color-input input[type="color"] {
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+}
+
+.custom-color-input input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.custom-color-input input[type="color"]::-webkit-color-swatch {
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+}
+
+.color-hex {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.selected-color-preview {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-color);
+}
+
+.selected-color-preview span:first-child {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.preview-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: 2px solid var(--border-color);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.preview-hex {
+  font-family: 'Monaco', 'Consolas', monospace;
+  font-size: 14px;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .color-picker {
+    max-width: 100%;
+  }
+  
+  .preset-colors {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
